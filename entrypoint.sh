@@ -16,7 +16,7 @@ echo $EVENT_DATA | jq .
 UPLOAD_URL=$(echo $EVENT_DATA | jq -r .release.upload_url)
 UPLOAD_URL=${UPLOAD_URL/\{?name,label\}/}
 RELEASE_NAME=$(echo $EVENT_DATA | jq -r .release.tag_name)
-if [ -z "${PROJECT_NAME}" ]; then
+if [ -z "${PROJECT_NAME+x}" ]; then
   PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
 fi
 NAME="${NAME:-${PROJECT_NAME}_${RELEASE_NAME}}_${GOOS}_${GOARCH}"
