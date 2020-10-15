@@ -11,6 +11,8 @@ Extra environment variables:
 * EXTRA_FILES
   * Pass a list of extra files for packaging.
     * Example: EXTRA_FILES: "README.md LICENSE"
+* PROJECT_NAME
+  * Defaults to GitHub repository basename
 
 ```yaml
 # .github/workflows/release.yaml
